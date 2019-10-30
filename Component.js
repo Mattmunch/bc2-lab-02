@@ -6,8 +6,8 @@ class Component {
         this.state = {};
     }
 
-    onRender(/*dom*/) {
-        // no-op
+    onRender() {
+    
     }
 
     renderDOM() {
@@ -18,12 +18,12 @@ class Component {
 
         const dom = htmlToDOM(html);
 
-        // remember the root Element for later for replacing or removing
+        
         this.rootElement = dom;
-        // call onRender to allow components to do additional work
+        
         this.onRender(dom);
 
-        // return to the caller
+        
         return dom;
     }
 
@@ -33,7 +33,6 @@ class Component {
 
     update(props) {
         props = props || {};
-        // update the props:
         Object.assign(this.props, props);
         
         const oldRoot = this.rootElement;

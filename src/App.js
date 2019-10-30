@@ -1,8 +1,8 @@
-import Component from './Component.js';
-import Header from './src/Header.js';
-import images from './data/images.js';
-import FilterImages from './src/FilterImages.js';
-import ImageList from './src/ImageList.js';
+import Component from '../Component.js';
+import Header from './Header.js';
+import images from '../data/images.js';
+import FilterImages from './FilterImages.js';
+import ImageList from './ImageList.js';
 
 class App extends Component {
     onRender(dom) {
@@ -37,8 +37,21 @@ class App extends Component {
         const filterImages = new FilterImages(filterImagesProps);
         const filterImagesDOM = filterImages.renderDOM();
 
-        const optionSection = dom.querySelector('.options-section');
+        const optionSection = dom.querySelector('.option-section');
         optionSection.appendChild(filterImagesDOM);
+    }
+    renderHTML(){
+        return `
+        <div>
+        <main>
+        <section class="option-section"></section>
+
+        <section class="list-section">
+        </section>
+
+        </main>
+        </div>
+        `;
     }
 }
 
