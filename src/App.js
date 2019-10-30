@@ -27,7 +27,7 @@ class App extends Component {
                 }
                 else {
                     filteredImages = images.filter(image => {
-                        return image.type === imageType;
+                        return image.keyword === imageType;
                     });
                 }
                 const updateProps = { images: filteredImages };
